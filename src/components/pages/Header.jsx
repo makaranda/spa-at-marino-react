@@ -52,10 +52,10 @@ export default function Header() {
       const logo = $(".navbar .logo> img");
       if (bodyScroll > 100) {
         navbar.addClass("nav-scroll");
-        logo.attr("src", "assets/images/logo-dark.png");
+        logo.attr("src", "/assets/images/logo-dark.png");
       } else {
         navbar.removeClass("nav-scroll");
-        logo.attr("src", "assets/images/logo.png");
+        logo.attr("src", "/assets/images/logo.png");
       }
     });
 
@@ -239,36 +239,6 @@ export default function Header() {
       },
     });
 
-    // MagnificPopup Gallery
-    if (galleryRef.current) {
-      $(galleryRef.current).magnificPopup({
-        delegate: ".popimg",
-        type: "image",
-        gallery: {
-          enabled: true,
-        },
-      });
-
-      $(".img-zoom").magnificPopup({
-        type: "image",
-        closeOnContentClick: true,
-        mainClass: "mfp-fade",
-        gallery: {
-          enabled: true,
-          navigateByImgClick: true,
-          preload: [0, 1],
-        },
-      });
-
-      $(".magnific-youtube, .magnific-vimeo, .magnific-custom").magnificPopup({
-        disableOn: 700,
-        type: "iframe",
-        mainClass: "mfp-fade",
-        removalDelay: 300,
-        preloader: false,
-        fixedContentPos: false,
-      });
-    }
     // Similar initialization for other carousels...
 
     // Smooth Scrolling

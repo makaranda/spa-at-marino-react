@@ -9,6 +9,10 @@ import Contact from "./components/pages/Contact";
 import Footer from "./components/pages/Footer";
 import Home from "./components/pages/Home";
 import Gallery from "./components/pages/Gallery";
+import Fullbodymessage from "./components/pages/Fullbodymessage";
+import Shorttreatments from "./components/pages/Shorttreatments";
+import Scrubsandwraps from "./components/pages/Scrubsandwraps";
+import HairandFacials from "./components/pages/HairandFacials";
 // import useJQueryInitializer from "./components/useJQueryInitializer";
 
 const router = createBrowserRouter([
@@ -18,23 +22,22 @@ const router = createBrowserRouter([
   },
   {
     path: "treatments",
-    element: <Home />,
     children: [
       {
         path: "full-body-massage",
-        element: <Home />,
+        element: <Fullbodymessage />,
       },
       {
         path: "short-treatments",
-        element: <Home />,
+        element: <Shorttreatments />,
       },
       {
         path: "scrubs-and-wraps",
-        element: <Home />,
+        element: <Scrubsandwraps />,
       },
       {
         path: "hair-and-facials",
-        element: <Home />,
+        element: <HairandFacials />,
       },
       {
         path: "special-treatments",

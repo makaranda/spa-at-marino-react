@@ -1,11 +1,46 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "waypoints/lib/jquery.waypoints.min.js";
 import Header from "./Header";
 import Footer from "./Footer";
+import $ from "jquery";
 
 export default function () {
+  const galleryRef = useRef(null);
+  useEffect(() => {
+    // MagnificPopup Gallery
+    if (galleryRef.current) {
+      $(galleryRef.current).magnificPopup({
+        delegate: ".popimg",
+        type: "image",
+        gallery: {
+          enabled: true,
+        },
+      });
+
+      $(".img-zoom").magnificPopup({
+        type: "image",
+        closeOnContentClick: true,
+        mainClass: "mfp-fade",
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1],
+        },
+      });
+
+      $(".magnific-youtube, .magnific-vimeo, .magnific-custom").magnificPopup({
+        disableOn: 700,
+        type: "iframe",
+        mainClass: "mfp-fade",
+        removalDelay: 300,
+        preloader: false,
+        fixedContentPos: false,
+      });
+    }
+  }, []);
   return (
     <div>
       <Header />
