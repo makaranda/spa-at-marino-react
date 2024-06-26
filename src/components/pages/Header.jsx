@@ -66,46 +66,46 @@ export default function Header() {
                 </span>
                 <ul class="dropdown-menu last">
                   <li class="dropdown-item">
-                    <Link href="full_body_massage.php">Full Body Massage </Link>
+                    <Link to="full-body-massage">Full Body Massage </Link>
                   </li>
                   <li class="dropdown-item">
-                    <Link href="short_treatments.php">Short Treatments</Link>
+                    <Link href="short-treatments">Short Treatments</Link>
                   </li>
                   <li class="dropdown-item">
-                    <Link href="scrubs_and_wraps.php">Scrubs and Wraps</Link>
+                    <Link href="scrubs-and_wraps">Scrubs and Wraps</Link>
                   </li>
                   <li class="dropdown-item">
-                    <Link href="hair_and_facials.php">Hair and Facials</Link>
+                    <Link href="hair-and-facials">Hair and Facials</Link>
                   </li>
                   <li class="dropdown-item">
-                    <Link href="special.php">Speciality Treatments</Link>
+                    <Link href="special">Speciality Treatments</Link>
                   </li>
                   <li class="dropdown-item">
-                    <Link href="our_spa_package.php">Our Spa Package</Link>
+                    <Link href="our-spa-package">Our Spa Package</Link>
                   </li>
                 </ul>
               </li>
 
               <li class="nav-item">
-                <Link class="nav-link" to="/products.php">
+                <Link class="nav-link" to="/products">
                   Products
                 </Link>
               </li>
 
               <li class="nav-item">
-                <Link class="nav-link" to="/gallery.php">
+                <Link class="nav-link" to="/gallery">
                   Gallery
                 </Link>
               </li>
 
               <li class="nav-item">
-                <Link class="nav-link" to="/contact.php">
+                <Link class="nav-link" to="/contact">
                   Contact
                 </Link>
               </li>
 
               <li class="nav-item">
-                <Link class="nav-link" to="/about.php">
+                <Link class="nav-link" to="/about">
                   About
                 </Link>
               </li>
