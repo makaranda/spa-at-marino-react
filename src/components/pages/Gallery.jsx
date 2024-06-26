@@ -6,40 +6,59 @@ import "waypoints/lib/jquery.waypoints.min.js";
 import Header from "./Header";
 import Footer from "./Footer";
 import $ from "jquery";
+import baguetteBox from "baguettebox.js";
+import "baguettebox.js/dist/baguetteBox.min.css";
 
 export default function () {
   const galleryRef = useRef(null);
   useEffect(() => {
     // MagnificPopup Gallery
-    if (galleryRef.current) {
-      $(galleryRef.current).magnificPopup({
-        delegate: ".popimg",
-        type: "image",
-        gallery: {
-          enabled: true,
-        },
-      });
+    // if (galleryRef.current) {
+    //   $(galleryRef.current).magnificPopup({
+    //     delegate: ".popimg",
+    //     type: "image",
+    //     gallery: {
+    //       enabled: true,
+    //     },
+    //   });
 
-      $(".img-zoom").magnificPopup({
-        type: "image",
-        closeOnContentClick: true,
-        mainClass: "mfp-fade",
-        gallery: {
-          enabled: true,
-          navigateByImgClick: true,
-          preload: [0, 1],
-        },
-      });
+    //   $(".img-zoom").magnificPopup({
+    //     type: "image",
+    //     closeOnContentClick: true,
+    //     mainClass: "mfp-fade",
+    //     gallery: {
+    //       enabled: true,
+    //       navigateByImgClick: true,
+    //       preload: [0, 1],
+    //     },
+    //   });
 
-      $(".magnific-youtube, .magnific-vimeo, .magnific-custom").magnificPopup({
-        disableOn: 700,
-        type: "iframe",
-        mainClass: "mfp-fade",
-        removalDelay: 300,
-        preloader: false,
-        fixedContentPos: false,
-      });
-    }
+    //   $(".magnific-youtube, .magnific-vimeo, .magnific-custom").magnificPopup({
+    //     disableOn: 700,
+    //     type: "iframe",
+    //     mainClass: "mfp-fade",
+    //     removalDelay: 300,
+    //     preloader: false,
+    //     fixedContentPos: false,
+    //   });
+    // }
+
+    baguetteBox.run(".gallery", {
+      // Custom options
+      captions: true,
+      buttons: "auto",
+      fullScreen: false,
+      noScrollbars: false,
+      bodyClass: "baguetteBox-open",
+      titleTag: false,
+      async: false,
+      preload: 2,
+      animation: "slideIn",
+      afterShow: null,
+      afterHide: null,
+      onChange: null,
+      overlayBackgroundColor: "rgba(0,0,0,.8)",
+    });
   }, []);
   return (
     <div>
@@ -60,7 +79,7 @@ export default function () {
 
       <section class="section-padding">
         <div class="container">
-          <div class="row">
+          <div class="row gallery" ref={galleryRef}>
             <div class="col-md-6 gallery-item">
               <a href="/assets/images/gallery/g1.jpg" title="" class="img-zoom">
                 <div class="gallery-box">

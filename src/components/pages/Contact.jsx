@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,42 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default function Contact() {
+  useEffect(() => {
+    const form = document.querySelector(".contact__form");
+    const msg = document.querySelector(".contact__msg");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Network response was not ok " + response.statusText
+            );
+          }
+          return response.text();
+        })
+        .then((data) => {
+          msg.style.display = "block";
+          msg.textContent = data;
+          msg.classList.remove("alert-danger");
+          msg.classList.add("alert-success");
+        })
+        .catch((error) => {
+          msg.style.display = "block";
+          msg.textContent =
+            "There was a problem with your submission: " + error.message;
+          msg.classList.remove("alert-success");
+          msg.classList.add("alert-danger");
+        });
+    });
+  }, []);
   return (
     <div>
       <Header />
@@ -56,7 +92,7 @@ export default function Contact() {
             </div>
             <div class="col-md-5 mb-30 offset-md-1">
               <h3>Get in touch</h3>
-              <form method="post" class="contact__form" action="">
+              <form method="post" class="contact__form" action="contact.php">
                 <div class="row">
                   <div class="col-12">
                     <div
