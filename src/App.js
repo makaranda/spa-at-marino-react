@@ -12,7 +12,11 @@ import Gallery from "./components/pages/Gallery";
 import Fullbodymessage from "./components/pages/Fullbodymessage";
 import Shorttreatments from "./components/pages/Shorttreatments";
 import Scrubsandwraps from "./components/pages/Scrubsandwraps";
-import HairandFacials from "./components/pages/HairandFacials";
+import HairandFacials from "./components/pages/HairsAndFacials";
+import SpecialTreatments from "./components/pages/SpecialTreatments";
+import OurSpaPackage from "./components/pages/HairandFacials copy";
+import Products from "./components/pages/Products";
+
 // import useJQueryInitializer from "./components/useJQueryInitializer";
 
 const router = createBrowserRouter([
@@ -41,17 +45,17 @@ const router = createBrowserRouter([
       },
       {
         path: "special-treatments",
-        element: <Home />,
+        element: <SpecialTreatments />,
       },
       {
         path: "our-spa-package",
-        element: <Home />,
+        element: <OurSpaPackage />,
       },
     ],
   },
   {
     path: "/products",
-    element: <Home />,
+    element: <Products />,
   },
   {
     path: "/contact",

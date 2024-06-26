@@ -22,7 +22,7 @@ export default function Header() {
         setTimeout(() => {
           preloader.classList.add("d-none");
           preloader_bg.classList.add("d-none");
-        }, 2000); // 2 seconds
+        }, 1300); // 2 seconds
       }
     };
 
