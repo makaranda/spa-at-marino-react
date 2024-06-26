@@ -6,13 +6,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import About from "./components/pages/About";
 import Header from "./components/pages/Header";
 import Contact from "./components/pages/Contact";
-import CoffeeTable from "./components/pages/CoffeeTable";
-import SofaSets from "./components/pages/SofaSets";
-import ReclinerSofa from "./components/pages/ReclinerSofa";
-import CornerSofa from "./components/pages/CornerSofa";
-import SingleSeater from "./components/pages/SingleSeater";
 import Footer from "./components/pages/Footer";
 import Home from "./components/pages/Home";
+import Gallery from "./components/pages/Gallery";
 // import useJQueryInitializer from "./components/useJQueryInitializer";
 
 const router = createBrowserRouter([
@@ -25,27 +21,27 @@ const router = createBrowserRouter([
     element: <Home />,
     children: [
       {
-        path: "/full-body-massage",
+        path: "full-body-massage",
         element: <Home />,
       },
       {
-        path: "/short-treatments",
+        path: "short-treatments",
         element: <Home />,
       },
       {
-        path: "/scrubs-and-wraps",
+        path: "scrubs-and-wraps",
         element: <Home />,
       },
       {
-        path: "/hair-and-facials",
+        path: "hair-and-facials",
         element: <Home />,
       },
       {
-        path: "/special-treatments",
+        path: "special-treatments",
         element: <Home />,
       },
       {
-        path: "/our-spa-package",
+        path: "our-spa-package",
         element: <Home />,
       },
     ],
@@ -60,7 +56,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/gallery",
-    element: <Home />,
+    element: <Gallery />,
   },
   {
     path: "/contact",
