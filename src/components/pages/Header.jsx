@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Jquery } from "react-jquery-plugin";
 import { Link, useLocation } from "react-router-dom";
 import Preloader from "./Preloader";
@@ -9,6 +9,7 @@ import "waypoints/lib/jquery.waypoints.min.js";
 
 export default function Header() {
   const location = useLocation();
+  const galleryRef = useRef(null);
 
   useEffect(() => {
     // Function to deactivate the preloader after 2 seconds
@@ -238,6 +239,36 @@ export default function Header() {
       },
     });
 
+    // MagnificPopup Gallery
+    if (galleryRef.current) {
+      $(galleryRef.current).magnificPopup({
+        delegate: ".popimg",
+        type: "image",
+        gallery: {
+          enabled: true,
+        },
+      });
+
+      $(".img-zoom").magnificPopup({
+        type: "image",
+        closeOnContentClick: true,
+        mainClass: "mfp-fade",
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1],
+        },
+      });
+
+      $(".magnific-youtube, .magnific-vimeo, .magnific-custom").magnificPopup({
+        disableOn: 700,
+        type: "iframe",
+        mainClass: "mfp-fade",
+        removalDelay: 300,
+        preloader: false,
+        fixedContentPos: false,
+      });
+    }
     // Similar initialization for other carousels...
 
     // Smooth Scrolling
