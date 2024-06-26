@@ -72,30 +72,6 @@ function App() {
   return (
     <div>
       <RouterProvider router={router} />
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Route>
-        </Routes>
-      </BrowserRouter> */}
-      {/* <Router>
-        <div>
-          <Routes>
-            <Route path="/" element={<PageWrapper component={<Home />} />} />
-            <Route
-              path="/about"
-              element={<PageWrapper component={<About />} />}
-            />
-            <Route
-              path="/contact"
-              element={<PageWrapper component={<Contact />} />}
-            />
-          </Routes>
-        </div>
-      </Router> */}
     </div>
   );
 }
