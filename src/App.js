@@ -32,35 +32,43 @@ const router = createBrowserRouter([
         path: "/short-treatments",
         element: <Home />,
       },
+      {
+        path: "/scrubs-and-wraps",
+        element: <Home />,
+      },
+      {
+        path: "/hair-and-facials",
+        element: <Home />,
+      },
+      {
+        path: "/special-treatments",
+        element: <Home />,
+      },
+      {
+        path: "/our-spa-package",
+        element: <Home />,
+      },
     ],
   },
   {
-    path: "/about",
-    element: <About />,
+    path: "/products",
+    element: <Home />,
   },
   {
     path: "/contact",
     element: <Contact />,
   },
   {
-    path: "/coffee-table-and-side-table",
-    element: <CoffeeTable />,
+    path: "/gallery",
+    element: <Home />,
   },
   {
-    path: "/sofa-sets",
-    element: <SofaSets />,
+    path: "/contact",
+    element: <Contact />,
   },
   {
-    path: "/recliner-sofas",
-    element: <ReclinerSofa />,
-  },
-  {
-    path: "/corner-and-chaise-sofas",
-    element: <CornerSofa />,
-  },
-  {
-    path: "/single-seaters",
-    element: <SingleSeater />,
+    path: "/about",
+    element: <About />,
   },
 ]);
 
