@@ -100,7 +100,7 @@ export default function Contact() {
                       style={{ display: "none" }}
                       role="alert"
                     >
-                      Your message was sent successfully.
+                      Your message was sent successfully..!!
                     </div>
                   </div>
                 </div>
