@@ -21,8 +21,18 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/index",
+    path: "treatments",
     element: <Home />,
+    children: [
+      {
+        path: "/full-body-massage",
+        element: <Home />,
+      },
+      {
+        path: "/short-treatments",
+        element: <Home />,
+      },
+    ],
   },
   {
     path: "/about",

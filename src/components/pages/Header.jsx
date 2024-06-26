@@ -15,185 +15,104 @@ export default function Header() {
   };
   return (
     <div>
-      <header>
-        <div className="header-top"></div>
-
-        <div className="header-mid-area">
-          <div className="container ">
-            <div className="row">
-              <div className="col-sm-6 col-xs-12">
-                <div className="logo-area">
-                  <a href="/">
-                    <img src="assets/images/logo.png" alt="" />
-                  </a>
-                </div>
-              </div>
-            </div>
+      <div class="preloader-bg"></div>
+      <div id="preloader">
+        <div id="preloader-status">
+          <div class="preloader-position loader">
+            <span></span>
           </div>
         </div>
+      </div>
 
-        <div className="header-bottom-area">
-          <div className="container">
-            <div className="row">
-              <nav className="main-menu">
-                <ul className="menu list">
-                  <li>
-                    <a className="active1" href="/">
-                      Home
-                    </a>
+      <div class="progress-wrap cursor-pointer">
+        <svg
+          class="progress-circle svg-content"
+          width="100%"
+          height="100%"
+          viewBox="-1 -1 102 102"
+        >
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+      </div>
+
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <div class="logo-wrapper navbar-brand valign">
+            <Link to="/">
+              <div class="logo">
+                <img src="/assets/images/logo.png" class="logo-img" alt="" />
+              </div>
+            </Link>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="icon-bar">
+              <i class="ti-line-double"></i>
+            </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <span class="nav-link active">
+                  TREATMENTS <i class="ti-angle-down"></i>
+                </span>
+                <ul class="dropdown-menu last">
+                  <li class="dropdown-item">
+                    <Link href="full_body_massage.php">Full Body Massage </Link>
                   </li>
-                  <li className="dropdown">
-                    <Link
-                      data-toggle="dropdown"
-                      className="dropdown-toggle"
-                      id="lol"
-                      to="#"
-                    >
-                      Sofas <b className="caret"></b>
-                    </Link>
-                    <ul
-                      className="dropdown-menu"
-                      style={{ background: "#fff", marginTop: "-1px" }}
-                    >
-                      <li className="dropdown-menu2">
-                        <a href="/sofa-sets" style={{ color: "#03244ebf" }}>
-                          Sofa Sets
-                        </a>
-                      </li>
-                      <li className="dropdown-menu2">
-                        <a
-                          href="/recliner-sofas"
-                          style={{ color: "#03244ebf" }}
-                        >
-                          Recliner Sofas
-                        </a>
-                      </li>
-                      <li className="dropdown-menu2">
-                        <a
-                          href="/corner-and-chaise-sofas"
-                          style={{ color: "#03244ebf" }}
-                        >
-                          Corner & Chaise Sofas{" "}
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/single-seaters"
-                          style={{ color: "#03244ebf" }}
-                        >
-                          Single Seaters
-                        </a>
-                      </li>
-                    </ul>
+                  <li class="dropdown-item">
+                    <Link href="short_treatments.php">Short Treatments</Link>
                   </li>
-                  <li>
-                    <a href="/coffee-table-and-side-table">
-                      Coffee Tables & Side Tables
-                    </a>
+                  <li class="dropdown-item">
+                    <Link href="scrubs_and_wraps.php">Scrubs and Wraps</Link>
                   </li>
-                  <li>
-                    <Link to="/about">About Us</Link>
+                  <li class="dropdown-item">
+                    <Link href="hair_and_facials.php">Hair and Facials</Link>
                   </li>
-                  <li>
-                    <Link to="/contact">Contact</Link>
+                  <li class="dropdown-item">
+                    <Link href="special.php">Speciality Treatments</Link>
+                  </li>
+                  <li class="dropdown-item">
+                    <Link href="our_spa_package.php">Our Spa Package</Link>
                   </li>
                 </ul>
-              </nav>
-            </div>
+              </li>
+
+              <li class="nav-item">
+                <Link class="nav-link" to="/products.php">
+                  Products
+                </Link>
+              </li>
+
+              <li class="nav-item">
+                <Link class="nav-link" to="/gallery.php">
+                  Gallery
+                </Link>
+              </li>
+
+              <li class="nav-item">
+                <Link class="nav-link" to="/contact.php">
+                  Contact
+                </Link>
+              </li>
+
+              <li class="nav-item">
+                <Link class="nav-link" to="/about.php">
+                  About
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className="mobile-menu-area">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12">
-                <div className="mobile-menu mean-container">
-                  <div className="mean-bar">
-                    <a
-                      href="#"
-                      class="meanmenu-reveal"
-                      style={{ right: "0", left: "auto" }}
-                      onClick={toggleHighlight}
-                    >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </a>
-                    <nav id="dropdown" className="mean-nav">
-                      <ul
-                        className={`${isHighlighted ? "menu" : "d-none menu"}`}
-                      >
-                        <li>
-                          <a className="active1" href="/">
-                            Home
-                          </a>
-                        </li>
-                        <li className="dropdown">
-                          <button
-                            className="dropdown-toggle2"
-                            type="button"
-                            onClick={toggleHighlightTwo}
-                            style={{
-                              backgroundColor: "transparent",
-                              padding: "10px 0 10px 20px",
-                              border: "none",
-                              fontSize: "12px",
-                              color: "#666666",
-                              fontWeight: "bold",
-                              fontFamily: "Montserrat, sans-serif !important",
-                              textTransform: "uppercase",
-                            }}
-                          >
-                            Sofas <b className="caret"></b>
-                          </button>
-                          <ul
-                            className={`${
-                              isHighlightedTwo
-                                ? "d-block dropdown-menu"
-                                : "d-none dropdown-menu"
-                            }`}
-                            style={{ background: "#fff" }}
-                          >
-                            <li>
-                              <a href="/sofa-sets">Sofa Sets</a>
-                            </li>
-                            <li>
-                              <a href="/recliner-sofas">Recliner Sofas </a>
-                            </li>
-                            <li>
-                              <a href="/corner-and-chaise-sofas">
-                                Corner & Chaise Sofas
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="/single-seaters"
-                                style={{ color: "#03244ebf" }}
-                              >
-                                Single Seaters{" "}
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="/coffee-table-and-side-table">
-                            Coffee Tables & Side Tables
-                          </a>
-                        </li>
-                        <li>
-                          <Link to="/about">About Us</Link>
-                        </li>
-                        <li>
-                          <Link to="/contact">Contact</Link>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      </nav>
     </div>
   );
 }
